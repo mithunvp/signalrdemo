@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-w+yWASP3zYNxxvwoQBD5fUSc1tctKq4KUiZzxgkBSJACiUp+IbweVKvsEhMI+gz7" crossorigin="anonymous">
+</head>
+<body class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">ASP.NET Core SignalR Demo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="btn btn-info my-2 my-sm-0" type="button" id="btnConnnect" onclick="getConnected()">Connect</button>
+
+    </nav>
+    <div class="alert alert-dismissible alert-success" id="connectAlertDiv" style="display:none;">
+        <strong>Success!!</strong> Connection established.
+    </div>
+    <div class="alert alert-dismissible alert-info" id="broadcastDiv" style="display:none;">
+    </div>
+    <h2>Real Time File Watcher</h2>
+    <p class="text-success">File Watcher Hub emits whenever File Created or Deleted using ASP.NET Core SignalR</p>
+    <ul class="list-group" id="fileList"></ul>    
+</body>
+</html>
+
+<script src="lib/signalr/dist/browser/signalr.min.js"></script>
+<script src="app.js"></script>
