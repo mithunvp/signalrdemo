@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using SignalRDemoApp.Hubs;
 
 namespace SignalRDemoApp
@@ -19,7 +20,7 @@ namespace SignalRDemoApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMyFileWatcher watcher)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMyFileWatcher watcher)
         {
             if (env.IsDevelopment())
             {
@@ -29,9 +30,9 @@ namespace SignalRDemoApp
 
             app.UseFileServer();
 
-            app.UseSignalR(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapHub<FileWatcherHub>("/fileWatcherHub");                
+                endpoints.MapHub<FileWatcherHub>("/fileWatcherHub");
             });
 
             app.Run(async (context) =>
