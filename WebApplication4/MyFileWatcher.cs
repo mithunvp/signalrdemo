@@ -19,7 +19,7 @@ namespace SignalRDemoApp
             watcher.Deleted += new FileSystemEventHandler(OnChanged);            
 
             // tell the watcher where to look
-            watcher.Path = @"D:\AS\Tracking\";
+            watcher.Path = @"D:\Book\TestFiles\";
 
             // You must add this line - this allows events to fire.
             watcher.EnableRaisingEvents = true;

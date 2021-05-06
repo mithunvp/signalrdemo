@@ -29,6 +29,7 @@ namespace SignalRDemoApp
             _watcher = watcher;
 
             app.UseFileServer();
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
